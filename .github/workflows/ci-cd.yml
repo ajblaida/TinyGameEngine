@@ -91,6 +91,9 @@ jobs:
     - name: Pack NuGet packages with release tag version
       run: |
         VERSION=${GITHUB_REF#refs/tags/}
+        # Remove 'v' prefix if present (e.g., v1.0.0 -> 1.0.0)
+        VERSION=${VERSION#v}
+        echo "Using version: $VERSION"
         dotnet pack src/TinyGameEngine.Core --configuration Release --no-build --output ./packages /p:PackageVersion=$VERSION
         dotnet pack src/TinyGameEngine.ReferenceImpl --configuration Release --no-build --output ./packages /p:PackageVersion=$VERSION
       env:
