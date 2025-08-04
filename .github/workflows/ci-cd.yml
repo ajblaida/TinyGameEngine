@@ -81,24 +81,24 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
-        
+
     - name: Restore dependencies
       run: dotnet restore ${{ env.SOLUTION_FILE }}
       
     - name: Build solution
       run: dotnet build ${{ env.SOLUTION_FILE }} --configuration Release --no-restore
       
-    - name: Pack NuGet packages
+    - name: Pack NuGet packages with release tag version
       run: |
-        dotnet pack src/TinyGameEngine.Core --configuration Release --no-build --output ./packages
-        dotnet pack src/TinyGameEngine.ReferenceImpl --configuration Release --no-build --output ./packages
-        
-    - name: Upload packages as artifacts
-      uses: actions/upload-artifact@v4
+        VERSION=${GITHUB_REF#refs/tags/}
+        dotnet pack src/TinyGameEngine.Core --configuration Release --no-build --output ./packages /p:PackageVersion=$VERSION
+        dotnet pack src/TinyGameEngine.ReferenceImpl --configuration Release --no-build --output ./packages /p:PackageVersion=$VERSION
+      env:
+        GITHUB_REF: ${{ github.ref }}
       with:
         name: nuget-packages
         path: ./packages/*.nupkg
-        
+      
     - name: Publish to NuGet (if secrets are available)
       run: |
         dotnet nuget push ./packages/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
