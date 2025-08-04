@@ -1,0 +1,102 @@
+# .gitignore for C# Azure-native Web Application (Tiny Game Engine)
+
+# Build results
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.swp
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Rider
+.idea/
+*.sln.iml
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Azure Functions local settings
+local.settings.json
+
+# Azure Storage Emulator / Azurite
+AzuriteWorkspace/
+*.db
+*.log
+
+# IIS Express
+.vs/
+*.vspscc
+*.vssscc
+*.scc
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# DotCover
+*.dotCover
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Publish
+publish/
+*.Publish.xml
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Application Insights config
+ApplicationInsights.config
+
+# Others
+*.orig
+*.rej
+
+# Ignore secrets/configs
+secrets.json
+
+# Ignore generated JSON state files
+state/*.json
+
+# Ignore container artifacts
+docker-compose.override.yml
+.env
+.env.*

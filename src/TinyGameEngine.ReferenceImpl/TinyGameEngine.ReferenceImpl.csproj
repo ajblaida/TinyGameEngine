@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    
+    <!-- NuGet Package Properties -->
+    <PackageId>TinyGameEngine.ReferenceImpl</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>TinyGameEngine Contributors</Authors>
+    <Description>Reference implementation and example project for TinyGameEngine.Core showing how to build a game with the framework.</Description>
+    <PackageTags>game-engine azure container-apps example reference</PackageTags>
+    <PackageProjectUrl>https://github.com/your-org/tiny-game-engine</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/your-org/tiny-game-engine</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    
+    <!-- Assembly Properties -->
+    <AssemblyTitle>TinyGameEngine.ReferenceImpl</AssemblyTitle>
+    <Product>Tiny Game Engine Reference Implementation</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TinyGameEngine.Core\TinyGameEngine.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="Dockerfile" Pack="true" PackagePath="content\" />
+    <None Include="azure.yaml" Pack="true" PackagePath="content\" />
+    <None Include="infra\**\*" Pack="true" PackagePath="content\infra\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
+  </ItemGroup>
+
+</Project>

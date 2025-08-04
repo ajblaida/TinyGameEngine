@@ -1,0 +1,58 @@
+@TinyGameEngine_HostAddress = http://localhost:5107
+
+###
+# Health Check
+GET {{TinyGameEngine_HostAddress}}/health
+
+###
+# Start a new game
+POST {{TinyGameEngine_HostAddress}}/api/game/start
+Content-Type: application/json
+
+{
+  "gameId": "test-game-123",
+  "gameMode": "Fake Game",
+  "playerId": "player1"
+}
+
+###
+# Get current game state
+GET {{TinyGameEngine_HostAddress}}/api/game/test-game-123
+
+###
+# Update game state
+POST {{TinyGameEngine_HostAddress}}/api/game/update
+Content-Type: application/json
+
+{
+  "gameId": "test-game-123",
+  "playerId": "player1",
+  "score": 1500,
+  "level": 3,
+  "customData": {
+    "lives": 3,
+    "powerups": ["speed", "shield"]
+  }
+}
+
+###
+# Submit high score
+POST {{TinyGameEngine_HostAddress}}/api/game/highscore
+Content-Type: application/json
+
+{
+  "score": 1500,
+  "player": "player1"
+}
+
+###
+# Get high scores
+GET {{TinyGameEngine_HostAddress}}/api/game/highscores?count=10
+
+###
+# Force state sync (if available)
+POST {{TinyGameEngine_HostAddress}}/api/game/sync
+
+###
+# Swagger UI
+GET {{TinyGameEngine_HostAddress}}/swagger

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: tiny-game-engine
+metadata:
+  template: tiny-game-engine@0.0.1-beta
+
+infra:
+  provider: bicep
+  path: ../../infra
+
+services:
+  api:
+    project: .
+    language: dotnet
+    host: containerapp
+    docker:
+      path: ../../Dockerfile
+      context: ../..
+
+pipeline:
+  provider: github-actions
