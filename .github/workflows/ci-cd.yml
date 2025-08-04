@@ -26,7 +26,7 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
         
     - name: Cache dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.nuget/packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
@@ -43,7 +43,7 @@ jobs:
       run: dotnet test ${{ env.SOLUTION_FILE }} --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage"
       
     - name: Upload coverage reports
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
         directory: ./TestResults
         fail_ci_if_error: false
@@ -60,7 +60,7 @@ jobs:
       uses: docker/setup-buildx-action@v3
       
     - name: Build Docker image
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: .
         push: false
@@ -94,7 +94,7 @@ jobs:
         dotnet pack src/TinyGameEngine.ReferenceImpl --configuration Release --no-build --output ./packages
         
     - name: Upload packages as artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: nuget-packages
         path: ./packages/*.nupkg
