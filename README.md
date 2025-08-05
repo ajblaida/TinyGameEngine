@@ -273,10 +273,6 @@ az containerapp create \
 
 - `GET /api/game/{gameId}` - Get current game state
 
-### High Scores
-- `POST /api/game/highscore` - Submit a high score
-- `GET /api/game/highscores?count=10` - Get top high scores
-
 ### Health & Monitoring
 - `GET /health` - Health check endpoint
 - `GET /swagger` - Swagger UI (development only)
@@ -293,6 +289,10 @@ az containerapp create \
 2. **Start Azurite** (for local blob storage)
    ```bash
    azurite --silent --location c:\azurite --debug c:\azurite\debug.log
+   ```
+3. **Or, use the script in the "tools" folder**
+   ```bash
+   $ ./tools/start-azureite.sh
    ```
 
 3. **Run the reference implementation**

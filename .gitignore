@@ -100,3 +100,5 @@ state/*.json
 docker-compose.override.yml
 .env
 .env.*
+
+*.azurite/
