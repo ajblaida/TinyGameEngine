@@ -2,6 +2,10 @@
 
 A lightweight, opinionated game engine designed to run in short-lived Azure Container Apps with state persistence via Azure Blob Storage and telemetry via Azure Application Insights.
 
+## NuGet
+https://www.nuget.org/packages/TinyGameEngine.Core/
+
+## Status
 [![.github/workflows/ci-cd.yml](https://github.com/ajblaida/TinyGameEngine/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/ajblaida/TinyGameEngine/actions/workflows/ci-cd.yml)
 
 ## 🎮 NuGet Packages
