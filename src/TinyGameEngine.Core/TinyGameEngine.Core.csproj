@@ -12,8 +12,8 @@
     <Authors>TinyGameEngine Contributors</Authors>
     <Description>A lightweight, opinionated game engine core designed for Azure Container Apps with state persistence and telemetry.</Description>
     <PackageTags>game-engine azure container-apps blob-storage application-insights</PackageTags>
-    <PackageProjectUrl>https://github.com/your-org/tiny-game-engine</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/your-org/tiny-game-engine</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ajblaida/TinyGameEngine</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ajblaida/TinyGameEngine</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

@@ -12,8 +12,8 @@
     <Authors>TinyGameEngine Contributors</Authors>
     <Description>Reference implementation and example project for TinyGameEngine.Core showing how to build a game with the framework.</Description>
     <PackageTags>game-engine azure container-apps example reference</PackageTags>
-    <PackageProjectUrl>https://github.com/your-org/tiny-game-engine</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/your-org/tiny-game-engine</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ajblaida/TinyGameEngine</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ajblaida/TinyGameEngine</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -24,10 +24,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TinyGameEngine.Core\TinyGameEngine.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
     <None Include="Dockerfile" Pack="true" PackagePath="content\" />
     <None Include="azure.yaml" Pack="true" PackagePath="content\" />
@@ -36,6 +32,7 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
+    <PackageReference Include="TinyGameEngine.Core" Version="0.0.1-alpha" />
   </ItemGroup>
 
 </Project>

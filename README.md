@@ -28,7 +28,7 @@ Example implementation and deployment templates:
 ### Option 1: Clone and Run Reference Implementation
 ```bash
 # Clone this repository
-git clone https://github.com/your-org/tiny-game-engine.git
+git clone https://github.com/ajblaida/TinyGameEngine.git
 cd tiny-game-engine
 
 # Build the solution
@@ -282,7 +282,7 @@ az containerapp create \
 ### Local Setup
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-org/tiny-game-engine.git
+   git clone https://github.com/ajblaida/TinyGameEngine.git
    cd tiny-game-engine
    ```
 
